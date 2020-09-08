@@ -78,7 +78,7 @@ class TestCredentials(unittest.TestCase):
         self.new_cred.save_cred()
         test_cred = Credentials("Google", "obewas","obewas1202")
         test_cred.save_cred()
-        cred_exists = Credentials.cred_exists("Twitter")
+        cred_exists = Credentials.cred_exists("Google")
         self.assertTrue(cred_exists)
 
 
