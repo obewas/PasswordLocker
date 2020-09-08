@@ -1,5 +1,5 @@
 import unittest
-from Credentials import Credentials
+from credentials import Credentials
 import pyperclip
 
 class TestCredentials(unittest.TestCase):
@@ -102,4 +102,4 @@ class TestCredentials(unittest.TestCase):
         '''
         self.new_cred.save_cred()
         Credentials.copy_passlock("vinceobindi1005")
-        self.assertEqual(self.new_cred.passlock, pyperclip.paste())            
+        self.assertEqual(self.new_cred.passlock, pyperclip.paste())   
