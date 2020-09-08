@@ -23,7 +23,7 @@ class TestCredentials(unittest.TestCase):
         '''
         self.assertEqual(self.new_cred.account, "Yahoo")
         self.assertEqual(self.new_cred.email, "obewas1202@gmail.com")
-        self.assertEqual(self.new_cred.passlock, "obewas1202")
+        self.assertEqual(self.new_cred.secret, "obewas1202")
 
         #7th test - saving credentials
 
@@ -101,4 +101,4 @@ class TestCredentials(unittest.TestCase):
         '''
         self.new_cred.save_cred()
         Credentials.copy_passlock("obewas1202")
-        self.assertEqual(self.new_cred.passlock, pyperclip.paste())   
+        self.assertEqual(self.new_cred.secret, pyperclip.paste())   

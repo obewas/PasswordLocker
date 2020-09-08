@@ -20,11 +20,11 @@ def save_credentials(credentials):
 
 def display_users():
     return User.display_users()
-def create_credentials(account, email, passlock):
+def create_credentials(account, email, secret):
     '''
     method credentials details
     '''
-    new_cred = Credentials(account, email, passlock)
+    new_cred = Credentials(account, email, secret)
     return new_cred
 
 
@@ -104,25 +104,25 @@ def main():
                 print("How many digits is your preferred password? ")
                 print(f"Maximum digits {how_many}")
                 lent = int(input())
-                passlock = "".join(random.sample(letters, lent))
+                secret = "".join(random.sample(letters, lent))
                 print(f"Your password has {lent} characters ")
-                print(passlock)
-                save_cred(create_credentials(account, email, passlock))
+                print(secret)
+                save_cred(create_credentials(account, email, secret))
                 print("Credentials saved! Enter 'da' to see account")
                 print("*" * 80)
                 print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, gp - generate a random password , ex -exit the contact list ")
                 print("*" * 80)
             elif input() == "no":
                 print("Password: ")
-                passlock=input()
-                save_cred(create_credentials(account, email, passlock))
+                secret=input()
+                save_cred(create_credentials(account, email, secret))
                 print("Credentials saved! Enter 'da' to see account")
                 print("*" * 80)
                 print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, gp - generate a random password , ex -exit the contact list ")
                 print("*" * 80)
 
-                save_users(create_credentials(account, email,passlock)) # create and save new passlock.
-                save_credentials(create_credentials(account, email,passlock))
+                save_users(create_credentials(account, email,secret)) # create and save new secret.
+                save_credentials(create_credentials(account, email,secret))
                 print ('\n')
                 print(f"New User {account} {email} created")
                 print ('\n')
@@ -135,7 +135,7 @@ def main():
             print(f"These are your credentials for {name}:")
             print("*" * 30)
             for cred in display_cred():
-                print(f"{cred.account}\n {cred.email}\n {cred.passlock}")
+                print(f"{cred.account}\n {cred.email}\n {cred.secret}")
             else:
                 print("*" * 30)
                 print("If empty, you do not have any accounts saved")
@@ -145,7 +145,7 @@ def main():
             search_cred= input()
             if find_account(search_cred):
                 search_acc = find_account(search_cred)
-                print(f"{search_acc.account} {search_acc.email} { search_acc.passlock}")
+                print(f"{search_acc.account} {search_acc.email} { search_acc.secret}")
             else: print("This account does not exist")
             
         elif short_code == "gp":
