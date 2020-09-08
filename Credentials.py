@@ -6,11 +6,11 @@ class Credentials:
     cred_list = []
 
     #Initialise credentials
-    def __init__(self, account , email , secretlock):
+    def __init__(self, account , email , passlock):
     
         self.account = account
         self.email = email
-        self.secretlock = secretlock
+        self.passlock = passlock
 
 
     #save credentials
@@ -64,9 +64,9 @@ class Credentials:
 
 
     @classmethod
-    def copy_secretlock(cls, secretlock):
-            find_account = Credentials.find_account(secretlock)
-            pyperclip.copy(find_account.secretlock)    
+    def copy_passlock(cls, passlock):
+            find_account = Credentials.find_account(passlock)
+            pyperclip.copy(find_account.passlock)    
 
 
 
