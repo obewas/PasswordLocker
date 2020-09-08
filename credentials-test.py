@@ -29,7 +29,7 @@ class TestCredentials(unittest.TestCase):
 
     def test_save_credentials(self):
         '''
-        check if credentials can be saved
+        checking if credentials are saving
         '''  
         self.new_cred.save_cred()
         self.assertEqual(len(Credentials.cred_list),1)
