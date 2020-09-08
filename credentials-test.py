@@ -70,8 +70,7 @@ class TestCredentials(unittest.TestCase):
         find_cred= Credentials.find_account("Twitter")
         self.assertEqual(find_cred.account, test_cred.account)
         
-        ############11th test########### confirm accounts credentials##########
-
+        #11th confirming account credentials
     def test_confirm_cred_exists(self):
         '''
         confirm that credentials actually exists
@@ -83,7 +82,7 @@ class TestCredentials(unittest.TestCase):
         self.assertTrue(cred_exists)
 
 
-        #################test 12th########Display credentials###########
+        #12th - displaing account credentials
 
         
     def test_display_credentials(self):
