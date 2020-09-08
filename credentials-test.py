@@ -6,7 +6,7 @@ class TestCredentials(unittest.TestCase):
 
     def setUp(self):
         '''
-        setup before a test is run
+        initial setup before a test is run
         '''
         self.new_cred = Credentials("GitHub", "vinceoumah@gmail.com", "vinceobindi1005")
     def tearDown(self):
