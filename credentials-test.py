@@ -15,17 +15,17 @@ class TestCredentials(unittest.TestCase):
         '''
         Credentials.cred_list = []
 
-        #######check initialization##########
+        #Test initialization
 
     def test_init(self):
         '''
-        check if instances initialize as expected
+        check if test instances initialize as expected
         '''
-        self.assertEqual(self.new_cred.account, "GitHub")
-        self.assertEqual(self.new_cred.email, "vinceoumah@gmail.com")
-        self.assertEqual(self.new_cred.passlock, "vinceobindi1005")
+        self.assertEqual(self.new_cred.account, "Yahoo")
+        self.assertEqual(self.new_cred.email, "obewas1202@gmail.com")
+        self.assertEqual(self.new_cred.passlock, "obewas1202")
 
-        ############7th test############
+        #7th test
 
     def test_save_credentials(self):
         '''
