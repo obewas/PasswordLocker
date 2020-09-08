@@ -8,10 +8,10 @@ class TestCredentials(unittest.TestCase):
         '''
         initial setup before a test is run
         '''
-        self.new_cred = Credentials("GitHub", "vinceoumah@gmail.com", "vinceobindi1005")
+        self.new_cred = Credentials("Yahoo", "obewas1202@gmail.com", "obewas1202")
     def tearDown(self):
         '''
-        clear list before any test is run
+        Resets a test after test run
         '''
         Credentials.cred_list = []
 
