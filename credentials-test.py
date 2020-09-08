@@ -25,7 +25,7 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(self.new_cred.email, "obewas1202@gmail.com")
         self.assertEqual(self.new_cred.secretlock, "obewas1202")
 
-        #7th test
+        #7th test - saving credentials
 
     def test_save_credentials(self):
         '''
@@ -34,18 +34,18 @@ class TestCredentials(unittest.TestCase):
         self.new_cred.save_cred()
         self.assertEqual(len(Credentials.cred_list),1)
 
-        ##############8th test ##########saving multiple credentials###########
+        #8th test - saving multiple credentials
 
     def test_saving_multiple_creds(self):
         '''
-        check if users can store multiple credentials
+        checking if users can store multiple credentials
         '''
         self.new_cred.save_cred()
         test_cred = Credentials("Twitter", "testuser","password")
         test_cred.save_cred()
         self.assertEqual(len(Credentials.cred_list),2)
 
-        ############9th test#######deleting credentials#######
+        #9th test - deleting credentials
 
     def test_delete_credentials(self):
         '''
@@ -58,7 +58,7 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(len(Credentials.cred_list), 1)
 
 
-        ##############10th test############search for credentials#######
+        #10th test - searching for credentials
 
     def test_search_for_cred(self):
         '''
