@@ -67,7 +67,7 @@ class TestCredentials(unittest.TestCase):
         self.new_cred.save_cred()
         test_cred = Credentials("Google", "obewas","obewas1202")
         test_cred.save_cred()
-        find_cred= Credentials.find_account("Twitter")
+        find_cred= Credentials.find_account("Google")
         self.assertEqual(find_cred.account, test_cred.account)
         
         #11th confirming account credentials
