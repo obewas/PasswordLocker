@@ -121,7 +121,7 @@ def main():
                 print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, gp - generate a random password , ex -exit the contact list ")
                 print("*" * 80)
 
-                save_user(create_credentials(account, email,secretlock)) # create and save new secretlock.
+                save_users(create_credentials(account, email,secretlock)) # create and save new secretlock.
                 save_credentials(create_credentials(account, email,secretlock))
                 print ('\n')
                 print(f"New User {account} {email} created")
