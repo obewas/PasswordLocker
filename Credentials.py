@@ -5,70 +5,68 @@ class Credentials:
     '''
     cred_list = []
 
-#########Assign propety to credentil list#########
-    def __init__(self, account , email , passlock):
+    #Initialise credentials
+    def __init__(self, account , email , secretlock):
     
         self.account = account
         self.email = email
-        self.passlock = passlock
+        self.secretlock = secretlock
 
 
-        #########save credentials##########
+    #save credentials
 
     def save_cred(self):
         '''
-        self credentials in cred_list
+        saving credentials in cred_list
         '''
         Credentials.cred_list.append(self)
 
-        ############Delete credentils#########
+    #Delete credentils
 
     def delete_cred(self):
         '''
-        delete credentials 
+        deleting credentials from cred_list
         '''
         Credentials.cred_list.remove(self)    
 
-        ###########search for credentials#######
+   #search for credentials
 
     @classmethod
     def find_account(cls, account):
         '''
-        search for accounts
+        searching for credentials
         '''
         for cred in cls.cred_list:
             if cred.account == account:
                 return cred    
-
-                ##############confirm credentials########
+    #confirm if credentials exist
 
     @classmethod
     def cred_exists(cls, account):
         '''
-        confirm a class actually exists
+        confirming if a credential exists
         '''
         for cred in cls.cred_list:
             if cred.account == account:
                 return True
         return False            
 
-
-        #################Display credentials################
+    #Displaying credentials
 
     @classmethod
     def display_cred(cls):
         '''
-        method that returns all credentials
+        Displays all credentials
         '''
         return cls.cred_list
 
-    ##########copy passwoed############
+    #copy passwords
 
 
     @classmethod
-    def copy_passlock(cls, passlock):
-            find_account = Credentials.find_account(passlock)
-            pyperclip.copy(find_account.passlock)    
+    def copy_secretlock(cls, secretlock):
+            find_account = Credentials.find_account(secretlock)
+            pyperclip.copy(find_account.secretlock)    
 
 
 
