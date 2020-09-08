@@ -41,7 +41,7 @@ class TestCredentials(unittest.TestCase):
         checking if users can store multiple credentials
         '''
         self.new_cred.save_cred()
-        test_cred = Credentials("Twitter", "testuser","password")
+        test_cred = Credentials("Google", "obewas","obewas1202")
         test_cred.save_cred()
         self.assertEqual(len(Credentials.cred_list),2)
 
@@ -52,7 +52,7 @@ class TestCredentials(unittest.TestCase):
         test if you can delete credentials test
         '''
         self.new_cred.save_cred()
-        test_cred = Credentials("Twitter", "testuser","password")
+        test_cred = Credentials("Google", "obewas","obewas1202")
         test_cred.save_cred()
         self.new_cred.delete_cred()
         self.assertEqual(len(Credentials.cred_list), 1)
@@ -65,7 +65,7 @@ class TestCredentials(unittest.TestCase):
         test if credentials can be searched for
         '''
         self.new_cred.save_cred()
-        test_cred = Credentials("Twitter", "testuser","password")
+        test_cred = Credentials("Google", "obewas","obewas1202")
         test_cred.save_cred()
         find_cred= Credentials.find_account("Twitter")
         self.assertEqual(find_cred.account, test_cred.account)
@@ -76,7 +76,7 @@ class TestCredentials(unittest.TestCase):
         confirm that credentials actually exists
         '''
         self.new_cred.save_cred()
-        test_cred = Credentials("Twitter", "testuser","password")
+        test_cred = Credentials("Google", "obewas","obewas1202")
         test_cred.save_cred()
         cred_exists = Credentials.cred_exists("Twitter")
         self.assertTrue(cred_exists)
@@ -93,12 +93,12 @@ class TestCredentials(unittest.TestCase):
 
 
 
-        #########copy password#########test 13th#####
+        #13th test - copying password
 
     def test_copy_password(self):
         '''
         test whether generated password can be copied
         '''
         self.new_cred.save_cred()
-        Credentials.copy_secretlock("vinceobindi1005")
+        Credentials.copy_secretlock("obewas1202")
         self.assertEqual(self.new_cred.secretlock, pyperclip.paste())   
