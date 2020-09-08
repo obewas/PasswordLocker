@@ -18,7 +18,7 @@ class TestUser(unittest.TestCase):
         check if class is initialiazing as expected
         '''
         self.assertEqual(self.new_user.username, "John")
-        self.assertEqual(self.new_user.password, "obewas1202@gmail.com")
+        self.assertEqual(self.new_user.password, "Paul")
 
 
     def test_saveUser(self):
