@@ -40,7 +40,7 @@ class TestUser(unittest.TestCase):
         test_user.saveUser()
         self.assertEqual(len(User.userList), 2)
 
-        ###########4th test#####Delete user#####
+        #4th test - Deleting user
 
     def test_delUser(self):
         '''
